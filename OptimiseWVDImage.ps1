@@ -465,4 +465,5 @@ Log-Event -LogText "Configuration Script Complete"
 Log-Event -LogText "Total run time $($StopWatch.Elapsed.TotalSeconds) seconds"
 Log-Event -LogText $LogBreak
 
+Exit 0
 #endregion
