@@ -43,10 +43,15 @@ $FSAddress = "$($FSAccount).file.core.windows.net"
 $FSUser = "localhost\$($FSAccount)"
 $FSCred = New-Object -TypeName System.Management.Automation.PSCredential -ArgumentList $FSUser, (ConvertTo-SecureString -String $FSKey -AsPlainText -Force)
 $Baselines = @(
+    ("$($FSLetter):\Win10\Scripts\Baseline-LocalInstall.ps1", "-Win10NonDomainJoined")
+)
+<#
+$Baselines = @(
     ("$($FSLetter):\Edge\Scripts\Baseline-LocalInstall.ps1", ""),
     ("$($FSLetter):\O365\Scripts\Baseline-LocalInstall.ps1", "-NoLegacyFileBlock"),
     ("$($FSLetter):\Win10\Scripts\Baseline-LocalInstall.ps1", "-Win10NonDomainJoined")
 )
+#>
 #endregion
 
 #region Functions
